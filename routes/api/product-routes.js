@@ -9,12 +9,11 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id', 'category_name'],
+        attributes: ['category_name'],
       },
       {
         model: Tag,
-        through: ProductTag,
-        attributes: ['id', 'tag_name'],
+        attributes: ['tag_name'],
       },
     ],
   })
@@ -36,22 +35,15 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id', 'category_name'],
+        attributes: ['category_name'],
       },
       {
         model: Tag,
-        through: ProductTag,
-        attributes: ['id', 'tag_name'],
+        attributes: ['tag_name'],
       },
     ],
   })
-  .then((product) => {
-    if (!product) {
-      res.status(404).json({ message: 'No product found with this id' });
-      return;
-    }
-    res.json(product);
-  })
+  .then((product) => res.json(product))
   .catch((err) => {
     console.log(err);
     res.status(500).json(err);

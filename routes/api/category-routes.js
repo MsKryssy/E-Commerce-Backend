@@ -4,9 +4,12 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', (req, res) => {
-  Category.findAll({
-    include: [Product],
+  Category.findAll(
+    {
+      include: {
+      model: Product,
     attributes: ['product_name'],
+      }
   })
   // find all categories
   // be sure to include its associated Products
@@ -22,18 +25,14 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-    include: [Product],
+    include: {
+      model: Product,
     attributes: ['category_id'],
+    }
   })
   // find one category by its `id` value
   // be sure to include its associated Products
-  .then((category) => {
-    if (!category) {
-      res.status(404).json({ message: 'No category found with this id'});
-      return;
-    }
-    res.json(category);
-  })
+  .then((category) => res.json(category))
   .catch((err) => {
     console.log(err);
     res.status(500).json(err);
@@ -41,8 +40,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  Category.create(req.body)
-  .then((category) => res.status(201).json(category))
+  Category.create({
+    category_name: req.body.category_name
+  })
+  .then((category) => res.json(category))
   .catch((err) => {
     console.log(err);
     res.status(500).json(err);
@@ -50,14 +51,18 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  Category.update(req.body, {
+  Category.update(
+    {
+      category_name: req.body.category_name
+    },
+    {
     where: {
       id: req.params.id,
     },
   })
   // update a category by its `id` value
   .then((category) => {
-    if (!category[0]) {
+    if (!category) {
       res.status(404).json({ message: 'No category found with this id'});
       return;
     }
