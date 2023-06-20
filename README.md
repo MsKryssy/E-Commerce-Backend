@@ -1,2 +1,31 @@
 # E-Commerce-Backend
-Finishing the building of the website to be able to compete with other e-commerce businesses.
+
+[![License](https://img.shields.io/badge/License-MIT-blueviolet.svg)](https://opensource.org/licenses/MIT)
+
+# Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contact](#contact)
+- [Demo](#watchdemohere)
+
+# Description
+
+Finishing the building of the website utilizing the pre-code given to me in order to add functionality to the back-end of the e-commerce business, aiming to compete with other businesses. Will allow users to use CRUD operations (Create, Read, Update, and Delete) when it comes to product categories and tags.
+
+# Installation
+
+Utilized 'npm i' to install necessary dependencies such as sequelize and express in order to use insomnia to ensure the app functions properly. Be sure to place all personal information in the .env file to prevent information from being shared with others.
+
+# Usage
+
+This can be used to track information for product inventory and categories.
+
+# Contact
+
+Please contact me via [Github](https://github.com/MsKryssy/E-Commerce-Backend) if you have any questions regarding this application or its usage.
+
+# Demo
+
+Watch video demo here: 
