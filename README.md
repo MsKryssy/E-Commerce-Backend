@@ -8,7 +8,7 @@
 - [Usage](#usage)
 - [License](#license)
 - [Contact](#contact)
-- [Demo](#watchdemohere)
+- [Demo](#demo)
 
 # Description
 
