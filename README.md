@@ -22,10 +22,14 @@ Utilized 'npm i' to install necessary dependencies such as sequelize and express
 
 This can be used to track information for product inventory and categories.
 
+# License 
+
+Please click the badge above in order to learn more about the MIT License.
+
 # Contact
 
 Please contact me via [Github](https://github.com/MsKryssy/E-Commerce-Backend) if you have any questions regarding this application or its usage.
 
 # Demo
 
-Watch video demo here: 
+Watch video demo here: [Screencastify](https://watch.screencastify.com/v/5zxvGMUmrCioETU72X1J)
